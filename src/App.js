@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Homepage from './pages/Homepage';
+import AboutUs from './pages/AboutUs';
+import AdoptADog from './pages/AdoptADog';
+import Volunteer from './pages/Volunteer';
+import Donate from './pages/Donate';
+import Events from './pages/Events';
+import ContactUs from './pages/ContactUs';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/adopt" element={<AdoptADog />} />
+        <Route path="/volunteer" element={<Volunteer />} />
+        <Route path="/donate" element={<Donate />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/adminDashboard" element={<AdminDashboard />}/>
+      </Routes>
+    </>
   );
 }
 
